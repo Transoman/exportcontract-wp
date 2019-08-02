@@ -1,0 +1,65 @@
+.hero-slider
+  background-color: #000
+  &__item
+    position: relative
+    z-index: 1
+    padding: 160px 0 180px
+    background:
+      repeat: no-repeat
+      position: center
+      size: cover
+    +r(1400)
+      padding: 100px 0
+    +r(767)
+      padding: 60px 0 90px
+    &::before
+      content: ''
+      position: absolute
+      z-index: -1
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      background: radial-gradient(310px at 50% 50%, rgba(30, 30, 30, 0) 0%, #1E1E1E 100%)
+      mix-blend-mode: overlay
+      opacity: 0.5
+      pointer-events: none
+    &::after
+      content: ''
+      position: absolute
+      z-index: -1
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      background: radial-gradient(310px at 50% 50%, rgba(30, 30, 30, 0) 0%, #1E1E1E 100%)
+      mix-blend-mode: overlay
+      opacity: 0.5
+      pointer-events: none
+  &__content
+    color: #fff
+    .btn
+      margin-top: 45px
+      padding:
+        right: 45px
+        left: 45px
+      +r(767)
+        margin-top: 25px
+        font-size: 12px
+  &__title
+    margin: 0
+    color: #fff
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.2)
+  &__above-title
+    margin-bottom: 25px
+    font-size: 18px
+    color: #fff
+    text-shadow: 0 3px 4px rgba(0, 0, 0, 0.15)
+    padding-left: 20px
+    border-left: 2px solid $accent
+    +r(767)
+      font-size: 16px
+  .swiper-pagination
+    bottom: 40px
+    +r(767)
+      bottom: 15px

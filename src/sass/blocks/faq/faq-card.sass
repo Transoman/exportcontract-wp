@@ -1,0 +1,61 @@
+.faq-card
+  border: 1px solid $bd-color
+  border-bottom: 0
+  background-color: #fff
+  +trans
+  &:first-child
+    border-radius: 3px 3px 0 0
+  &:last-child
+    border: 1px solid $bd-color
+    border-radius: 0 0 3px 3px
+  &.active
+    border-radius: 3px
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1)
+    border-color: transparent
+    .faq-card
+      &__arrow
+        background-color: $accent
+        border-color: $accent
+        svg
+          fill: #fff
+          fill-opacity: 1
+          transform: rotate(90deg)
+      &__title
+        font-weight: 600
+  &__title
+    position: relative
+    margin-bottom: 0
+    padding: 40px 70px 30px 30px
+    font-size: 16px
+    font-weight: 500
+    cursor: pointer
+    +trans
+    +r(767)
+      font-size: 14px
+      padding: 25px 60px 25px 30px
+  &__arrow
+    position: absolute
+    top: 30px
+    right: 30px
+    width: 30px
+    height: 30px
+    border: 1px solid rgba(30, 30, 30, 0.25)
+    border-radius: 3px
+    text-align: center
+    line-height: 28px
+    +trans
+    +r(767)
+      top: 50%
+      right: 20px
+      transform: translateY(-50%)
+    svg
+      width: 9px
+      height: 8px
+      +trans
+      transform: rotate(-90deg)
+      fill-opacity: 0.5
+  &__content
+    padding: 0 30px 30px
+    p
+      &:last-child
+        margin-bottom: 0

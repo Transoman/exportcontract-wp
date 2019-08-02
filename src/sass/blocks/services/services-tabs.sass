@@ -1,0 +1,143 @@
+.services-tabs
+  position: relative
+  display: flex
+  +r(992)
+    display: block
+    margin-bottom: 30px
+  +r(767)
+    margin-bottom: 20px
+  .section-title
+    position: absolute
+    top: 0
+    left: 0
+    +r(992)
+      position: static
+      top: auto
+      left: auto
+  &__btn
+    position: absolute
+    z-index: 1
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 30px
+    height: 30px
+    border-radius: 3px
+    border: 1px solid rgba(30, 30, 30, 0.25)
+    background: #fff
+    padding: 0
+    +trans
+    +r(992)
+      display: none
+    &:hover
+      border-color: $accent
+    &:focus
+      outline: none
+      border-color: $accent
+    svg
+      width: 9px
+      height: 8px
+    &.next
+      top: 60px
+      right: 70px
+      +r(1200)
+        top: 40px
+        right: 50px
+    &.prev
+      top: 60px
+      right: 110px
+      +r(1200)
+        top: 40px
+        right: 90px
+  &__item
+    position: relative
+    flex-grow: 1
+    padding: 60px 70px 100px
+    border: 1px solid #C9DBE3
+    border-radius: 3px
+    +r(1200)
+      padding: 40px 40px 100px
+    +r(767)
+      padding: 35px 15px 80px 20px
+  &__title
+    max-width: 560px
+    margin-bottom: 20px
+    +r(1200)
+      max-width: 420px
+    +r(992)
+      max-width: none
+  &__descr
+    p
+      &:last-child
+        margin-bottom: 0
+  &__sub-cat
+    margin: 35px 0 0
+    padding: 0
+    list-style: none
+    column-count: 2
+    +r(767)
+      column-count: 1
+      margin-top: 20px
+    li
+      margin-bottom: 15px
+      +r(767)
+        margin-bottom: 10px
+      &:last-child
+        margin-bottom: 0
+    a
+      color: $main-color
+      font-weight: 500
+      text-decoration: underline
+      &::before
+        content: '• '
+        font-size: 14px
+      &:hover, &:focus
+        color: $accent
+  &__link
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    z-index: 1
+    padding: 15px 0
+    border-top: 1px solid #C9DBE3
+    font-size: 12px
+    font-weight: 600
+    text-transform: uppercase
+    text-align: center
+    letter-spacing: 0.05em
+    color: #8D9FA7
+
+.services-tabs-list
+  margin: 100px 70px 120px 0
+  padding: 0
+  list-style: none
+  width: 300px
+  flex-shrink: 0
+  +r(1200)
+    margin-right: 30px
+  +r(992)
+    margin: 0 0 30px
+    width: auto
+  +r(767)
+    margin-bottom: 20px
+  li
+    margin-bottom: 25px
+    padding-left: 30px
+    font-size: 16px
+    border-left: 2px solid transparent
+    +trans
+    +r(767)
+      font-size: 14px
+    &:last-child
+      margin-bottom: 0
+    &.active
+      border-color: $accent
+      a
+        font-weight: 600
+        color: $accent
+
+  a
+    color: $main-color
+    &:hover, &:focus
+      color: $accent

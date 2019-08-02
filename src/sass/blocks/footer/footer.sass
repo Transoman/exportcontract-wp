@@ -1,0 +1,87 @@
+.footer
+  padding: 80px 0 50px
+  background-color: #292E31
+  color: #7E8589
+  +r(767)
+    padding: 55px 0 25px
+  &__bottom
+    padding-top: 55px
+    border-top: 1px solid rgba(#fff, 0.15)
+    +r(767)
+      padding-top: 25px
+  &__row
+    display: flex
+    flex-wrap: wrap
+    margin: 0 -15px
+  &__col
+    flex: 1 1 auto
+    max-width: 100%
+    margin-bottom: 50px
+    padding: 0 15px
+    +r(992)
+      width: 50%
+    +r(767)
+      margin-bottom: 30px
+    +r(576)
+      width: 100%
+      text-align: center
+  .widget-title
+    margin-bottom: 20px
+    font-size: 16px
+    +r(767)
+      margin-bottom: 10px
+    a
+      color: #fff
+      &:hover, &:focus
+        color: $accent
+  .widget
+    ul
+      margin: 0
+      padding: 0
+      list-style: none
+      li
+        font-size: 14px
+        margin-bottom: 10px
+        +r(767)
+          margin-bottom: 5px
+          font-size: 12px
+        &:last-child
+          margin-bottom: 0
+      a
+        padding: 0
+        border: 0
+        color: #7E8589
+        &:hover, &:focus
+          color: #fff
+  &__social
+    justify-content: flex-end
+    margin-bottom: 10px
+    +r(767)
+      justify-content: center
+      margin-bottom: 15px
+  &__phone
+    margin-bottom: 10px
+    +r(767)
+      text-align: center
+    a
+      font-size: 16px
+      font-weight: 600
+      color: #7E8589
+      +r(767)
+        font-size: 14px
+      &:hover, &:focus
+        color: #fff
+  &__address
+    margin-bottom: 0
+    font-size: 16px
+    +r(767)
+      margin-bottom: 35px
+      text-align: center
+      font-size: 14px
+
+.copy
+  margin: 0
+  font-weight: 600
+  text-align: right
+  +r(767)
+    text-align: center

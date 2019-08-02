@@ -1,0 +1,19 @@
+@import 'faq-card'
+
+.s-faq
+  padding-bottom: 140px
+  +r(767)
+    padding-bottom: 30px
+
+.faq-list
+  +r(992)
+    .col-lg-6
+      &:first-child
+        .faq-card
+          &:last-child
+            border-radius: 0
+            border-bottom: 0
+      &:last-child
+        .faq-card
+          &:first-child
+            border-radius: 0

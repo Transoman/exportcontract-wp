@@ -1,0 +1,49 @@
+.s-about
+  &__img
+    +r(992)
+      margin-bottom: 30px
+    img
+      float: right
+      max-width: none
+      +r(992)
+        float: none
+        max-width: 100%
+  &__content
+    padding-left: 70px
+    +r(1200)
+      padding-left: 0
+    .section-title
+      margin-bottom: 20px
+  &__descr
+    margin-bottom: 55px
+    +r(767)
+      margin-bottom: 20px
+    p
+      &:last-child
+        margin-bottom: 0
+  &__btns
+    display: flex
+    align-items: center
+    +r(1200)
+      flex-direction: column
+      align-items: flex-start
+    +r(992)
+      flex-direction: row
+      align-items: center
+    +r(767)
+      flex-direction: column
+      align-items: flex-start
+    & > *:not(:last-child)
+      margin-right: 20px
+      +r(1200)
+        margin-right: 0
+        margin-bottom: 20px
+      +r(992)
+        margin-bottom: 0
+        margin-right: 20px
+      +r(767)
+        margin-right: 0
+        margin-bottom: 15px
+  &__readmore
+    width: 100%
+    max-width: 195px

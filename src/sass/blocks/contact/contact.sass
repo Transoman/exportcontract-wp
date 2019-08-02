@@ -1,0 +1,88 @@
+.s-contact
+  height: 720px
+  padding: 0
+  +r(767)
+    height: auto
+    padding-top: 30px
+    padding-bottom: 20px
+  .container
+    position: relative
+    height: 100%
+  &__wrap
+    position: absolute
+    top: 50%
+    left: 15px
+    z-index: 2
+    transform: translateY(-50%)
+    width: 500px
+    padding: 60px 50px
+    background-color: #fff
+    +r(767)
+      position: relative
+      top: auto
+      left: auto
+      transform: none
+      width: auto
+      margin-bottom: 30px
+      padding: 0
+    &::before
+      content: ''
+      position: absolute
+      bottom: 20px
+      right: 20px
+      z-index: -1
+      width: 220px
+      height: 220px
+      background: url(images/content/logo-small.svg) no-repeat center / contain
+      opacity: 0.1
+      +r(767)
+        width: 140px
+        height: 140px
+        bottom: 0
+        right: -35px
+    h2
+      margin-bottom: 20px
+      font-size: 36px
+      +r(767)
+        font-size: 21px
+  &__info
+    &-row
+      display: flex
+      margin-bottom: 20px
+      +r(767)
+        display: block
+        margin-bottom: 0
+      &:last-child
+        margin-bottom: 0
+    &-item
+      flex: 1 1 auto
+      flex-shrink: 0
+      max-width: 100%
+      margin-right: 35px
+      font-size: 16px
+      font-weight: 500
+      color: $dark
+      +r(767)
+        margin-right: 0
+        margin-bottom: 15px
+        font-size: 14px
+      &:last-child
+        margin-right: 0
+      p
+        &:last-child
+          margin-bottom: 0
+    &-label
+      margin: 0 0 5px
+      font-size: 12px
+      font-weight: 500
+      color: #757575
+      text-transform: uppercase
+  &__map
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    +r(767)
+      position: static
+      height: 220px

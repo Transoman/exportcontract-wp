@@ -1,0 +1,42 @@
+@import 'hero-slider'
+
+.hero
+  min-height: 430px
+  padding: 60px 0
+  z-index: 1
+  background:
+    repeat: no-repeat
+    position: center
+    size: cover
+  +r(767)
+    min-height: 345px
+    padding: 35px 0
+  &::before
+    content: ''
+    position: absolute
+    z-index: -1
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background: radial-gradient(215px at 50% 50%, rgba(30, 30, 30, 0) 0%, #1E1E1E 100%)
+    mix-blend-mode: overlay
+    opacity: 0.8
+    pointer-events: none
+  &::after
+    content: ''
+    position: absolute
+    z-index: -1
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background: radial-gradient(215px at 50% 50%, rgba(30, 30, 30, 0) 0%, #1E1E1E 100%)
+    mix-blend-mode: overlay
+    opacity: 0.5
+    pointer-events: none
+  &__content
+    color: #fff
+  &__title
+    color: #fff
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.2)

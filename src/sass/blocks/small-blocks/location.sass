@@ -1,0 +1,31 @@
+.location
+  &__icon
+    width: 14px
+    height: 18px
+    fill: $accent
+    margin-right: 20px
+    +r(767)
+      width: 12px
+      height: 15px
+      margin-right: 10px
+  &__title
+    position: relative
+    padding-right: 20px
+    vertical-align: middle
+    font-weight: 500
+    color: $darken
+    +r(767)
+      font-size: 12px
+      padding-right: 15px
+    &::after
+      content: ''
+      position: absolute
+      top: 50%
+      right: 0
+      transform: translateY(-50%)
+      width: 0
+      height: 0
+      border: 0 solid transparent
+      border-left-width: 3px
+      border-right-width: 3px
+      border-top: 3px solid #6E787D

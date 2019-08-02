@@ -1,0 +1,23 @@
+.services-card
+  padding: 55px 0
+  border-top: 1px solid $bd-color
+  &:last-child
+    border-bottom: 1px solid $bd-color
+  &__title
+    margin-bottom: 20px
+    a
+      color: inherit
+      &:hover, &:focus
+        color: $accent
+  &__cats
+    a
+      font-weight: 600
+      color: $accent
+      text-decoration: underline
+      &:last-child
+        &::after
+          content: ' →'
+          display: inline
+
+      &:hover, &:focus
+        color: lighten($accent, 10%)

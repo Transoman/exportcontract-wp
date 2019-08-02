@@ -1,0 +1,86 @@
+.header
+  .container
+    position: relative
+    display: flex
+    align-items: center
+  &__top
+    padding: 22px 0
+    border-bottom: 1px solid #D8E6ED
+    +r(767)
+      padding: 15px 0
+    .header
+      &__location
+        display: none
+        +r(992)
+          display: block
+      &__logo
+        +r(992)
+          display: none
+  &__logo
+    flex-shrink: 0
+    margin-right: 100px
+    +r(1200)
+      margin-right: 70px
+    +r(767)
+      margin-right: 20px
+  &__partner
+    margin-right: 110px
+    font-size: 16px
+    font-weight: 600
+    +r(1200)
+      display: flex
+      flex-direction: column
+      margin-right: 30px
+    +r(992)
+      display: none
+    & > *:not(:last-child)
+      margin-right: 70px
+      +r(1200)
+        margin-right: 0
+    &-item
+      position: relative
+      display: inline-block
+      padding-left: 35px
+      color: $darken
+      &::before
+        content: ''
+        position: absolute
+        top: 50%
+        left: 0
+        transform: translateY(-50%)
+        width: 26px
+        height: 15px
+      &--eksar
+        &::before
+          background: url(images/content/eksar.svg) no-repeat center
+      &--eximbank
+        &::before
+          background: url(images/content/roseksimbank.svg) no-repeat center
+  &__phone
+    margin-left: auto
+    .phone
+      &__callback
+        +r(767)
+          display: none
+      &__tel
+        +r(767)
+          margin-right: 0
+      &__text
+        +r(480)
+          display: none
+      &__icon
+        +r(480)
+          margin-right: 15px
+  &__bottom
+    padding: 20px 0
+    +r(767)
+      padding: 10px 0
+    .header
+      &__logo
+        display: none
+        +r(992)
+          display: flex
+      &__location
+        margin-left: auto
+        +r(992)
+          display: none
