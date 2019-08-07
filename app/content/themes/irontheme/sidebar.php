@@ -7,11 +7,11 @@
  * @package mytheme
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+if ( ! is_active_sidebar( 'sidebar-page' ) ) {
   return;
 }
 ?>
 
-<aside id="secondary" class="widget-area">
-  <?php dynamic_sidebar( 'sidebar-1' ); ?>
-</aside><!-- #secondary -->
+<aside class="sidebar">
+  <?php dynamic_sidebar( 'sidebar-page' ); ?>
+</aside>

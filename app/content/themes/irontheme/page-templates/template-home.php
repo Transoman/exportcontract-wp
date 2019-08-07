@@ -154,7 +154,7 @@ endif; ?>
                   <?php if (get_sub_field('link_url')): ?>
                     <a href="<?php echo esc_url(get_sub_field('link_url')); ?>" class="btn s-about__readmore">Подробнее</a>
                   <?php endif; ?>
-                  <a href="#" class="btn btn--blue">начать сотрудничество</a>
+                  <a href="#" class="btn btn--blue cooperation_open">начать сотрудничество</a>
                 </div>
 
               </div>
@@ -209,47 +209,47 @@ endif; ?>
 
       <section class="s-contact">
         <div class="container">
-          <div class="s-contact__wrap">
+          <div class="contact-block s-contact__wrap">
             <h2><?php the_sub_field('title'); ?></h2>
             <?php the_sub_field('descr'); ?>
 
-            <div class="s-contact__info">
-              <div class="s-contact__info-row">
+            <div class="contact-block__info">
+              <div class="contact-block__info-row">
                 <?php if (get_field('phone_1', 'option')): ?>
-                  <div class="s-contact__info-item">
-                    <p class="s-contact__info-label">Телефон:</p>
+                  <div class="contact-block__info-item">
+                    <p class="contact-block__info-label">Телефон:</p>
                     <a href="tel:<?php echo preg_replace('![^0-9/+]+!', '', get_field('phone_1', 'option')); ?>"><?php the_field('phone_1', 'option'); ?></a>
                   </div>
                 <?php endif; ?>
 
                 <?php if (get_field('phone_2', 'option')): ?>
-                  <div class="s-contact__info-item">
-                    <p class="s-contact__info-label">Телефон:</p>
+                  <div class="contact-block__info-item">
+                    <p class="contact-block__info-label">Телефон:</p>
                     <a href="tel:<?php echo preg_replace('![^0-9/+]+!', '', get_field('phone_2', 'option')); ?>"><?php the_field('phone_2', 'option'); ?></a>
                   </div>
                 <?php endif; ?>
               </div>
 
-              <div class="s-contact__info-row">
+              <div class="contact-block__info-row">
                 <?php if (get_field('schedule', 'option')): ?>
-                  <div class="s-contact__info-item">
-                    <p class="s-contact__info-label">Режим работы:</p>
+                  <div class="contact-block__info-item">
+                    <p class="contact-block__info-label">Режим работы:</p>
                     <p><?php the_field('schedule', 'option'); ?></p>
                   </div>
                 <?php endif; ?>
 
                 <?php if (get_field('email', 'option')): ?>
-                  <div class="s-contact__info-item">
-                    <p class="s-contact__info-label">Почта:</p>
+                  <div class="contact-block__info-item">
+                    <p class="contact-block__info-label">Почта:</p>
                     <a href="mailto:<?php the_field('email', 'option'); ?>"><?php the_field('email', 'option'); ?></a>
                   </div>
                 <?php endif; ?>
               </div>
 
-              <div class="s-contact__info-row">
+              <div class="contact-block__info-row">
                 <?php if (get_field('address', 'option')): ?>
-                  <div class="s-contact__info-item">
-                    <p class="s-contact__info-label">Адрес:</p>
+                  <div class="contact-block__info-item">
+                    <p class="contact-block__info-label">Адрес:</p>
                     <p><?php the_field('address', 'option'); ?></p>
                   </div>
                 <?php endif; ?>
@@ -260,23 +260,6 @@ endif; ?>
         </div>
         <div id="contact-map" class="s-contact__map"></div>
 
-        <?php $location = get_field('map', 'option');
-        if ( !empty($location) ): ?>
-          <script>
-            function initMap() {
-              var uluru = {lat: <?php echo $location['lat']; ?>, lng: <?php echo $location['lng']; ?>};
-              var map = new google.maps.Map(document.getElementById('contact-map'), {
-                zoom: 15,
-                center: uluru
-              });
-              var marker = new google.maps.Marker({
-                position: uluru,
-                map: map
-              });
-            }
-          </script>
-          <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaX1QlThDnYC0tJp8PL9kdxufKXTfIy_0&callback=initMap"></script>
-        <?php endif; ?>
       </section>
 
     <?php endif;

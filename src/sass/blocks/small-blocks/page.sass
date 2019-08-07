@@ -1,14 +1,47 @@
+.page-content
+  padding: 130px 0 100px
+  +r(767)
+    padding: 55px 0 60px
+
 .page-head
   display: flex
+  flex-wrap: wrap
   align-items: center
   margin-bottom: 40px
+  +r(767)
+    flex-direction: column
+    align-items: stretch
+    margin-bottom: 20px
   .search-serv
     margin-left: auto
   .page-title
     margin-bottom: 0
+
+.page-title
+  margin-bottom: 30px
+  +r(767)
+    margin-bottom: 20px
 
 .page-descr
   margin-bottom: 45px
   p
     &:last-child
       margin-bottom: 0
+
+.page-text
+  h2
+    margin-bottom: 25px
+  ul
+    margin: 0 0 15px
+    padding: 0
+    list-style: none
+    li
+      margin-bottom: 10px
+      &:last-child
+        margin-bottom: 0
+      &::before
+        content: '• '
+        display: inline-block
+        margin-right: 2px
+  .wp-block-image
+    margin: 50px 0 40px

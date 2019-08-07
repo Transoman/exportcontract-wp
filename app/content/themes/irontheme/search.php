@@ -10,19 +10,23 @@
 get_header();
 ?>
 
-  <section id="primary" class="content-area">
-    <main id="main" class="site-main">
+  <section class="hero" style="background-image: url(<?php echo get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : THEME_URL .'/images/content/hero.jpg)'; ?>">
+    <div class="container">
+      <?php get_template_part('template-parts/breadcrumbs'); ?>
+
+      <div class="hero__content">
+        <h1 class="hero__title"><?php
+          /* translators: %s: search query. */
+          printf( esc_html__( 'Результаты поиска для: %s', 'ith' ), '<span>' . get_search_query() . '</span>' );
+          ?></h1>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="container">
 
     <?php if ( have_posts() ) : ?>
-
-      <header class="page-header">
-        <h1 class="page-title">
-          <?php
-          /* translators: %s: search query. */
-          printf( esc_html__( 'Search Results for: %s', 'mytheme' ), '<span>' . get_search_query() . '</span>' );
-          ?>
-        </h1>
-      </header><!-- .page-header -->
 
       <?php
       /* Start the Loop */
@@ -47,8 +51,8 @@ get_header();
     endif;
     ?>
 
-    </main><!-- #main -->
-  </section><!-- #primary -->
+    </div>
+  </section>
 
 <?php
 get_sidebar();

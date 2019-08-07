@@ -29,6 +29,19 @@
               <?php ith_the_icon('location', 'location__icon'); ?>
               <a href="#" class="location__title">Москва и МО</a>
             </div>
+            <div class="location__body">
+              <ul class="location__list">
+                <li class="location__list-item">
+                  <a href="#">Москва и МО</a>
+                </li>
+                <li class="location__list-item">
+                  <a href="#">Москва и МО</a>
+                </li>
+                <li class="location__list-item">
+                  <a href="#">Москва и МО</a>
+                </li>
+              </ul>
+            </div>
           </div>
 
           <div class="header__partner">
@@ -43,7 +56,7 @@
                 <span class="phone__text"><?php the_field('phone_2', 'option'); ?></span>
               </a>
             <?php endif; ?>
-            <a href="#" class="btn btn--blue phone__callback">Обратный звонок</a>
+            <a href="#" class="btn btn--blue phone__callback callback_open">Обратный звонок</a>
           </div>
 
         </div>
@@ -77,6 +90,19 @@
             <div class="location__head">
               <?php ith_the_icon('location', 'location__icon'); ?>
               <a href="#" class="location__title">Москва и МО</a>
+            </div>
+            <div class="location__body">
+              <ul class="location__list">
+                <li class="location__list-item">
+                  <a href="#">Москва и МО</a>
+                </li>
+                <li class="location__list-item">
+                  <a href="#">Москва и МО</a>
+                </li>
+                <li class="location__list-item">
+                  <a href="#">Москва и МО</a>
+                </li>
+              </ul>
             </div>
           </div>
 

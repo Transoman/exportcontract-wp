@@ -72,7 +72,45 @@
 
 </div><!-- /.wrapper -->
 
-<?php wp_footer(); ?>
+  <div id="callback" class="modal">
+    <button type="button" class="modal__close callback_close"></button>
 
+    <h3 class="modal__title">Обратный звонок</h3>
+
+    <?php echo do_shortcode('[contact-form-7 id="124" title="Обратный звонок"]'); ?>
+
+  </div>
+
+  <div id="cooperation" class="modal">
+    <button type="button" class="modal__close cooperation_close"></button>
+
+    <h3 class="modal__title">Начать сотрудничество</h3>
+
+    <?php echo do_shortcode('[contact-form-7 id="175" title="Сотрудничество"]'); ?>
+
+  </div>
+
+<?php wp_footer(); ?>
+  <?php $location = get_field('map', 'option');
+  if ( !empty($location) ): ?>
+    <script>
+      function initMap() {
+        var uluru = {lat: <?php echo $location['lat']; ?>, lng: <?php echo $location['lng']; ?>};
+
+        if (document.getElementById('contact-map')) {
+
+          var map = new google.maps.Map(document.getElementById('contact-map'), {
+            zoom: 15,
+            center: uluru
+          });
+          var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+          });
+        }
+      }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaX1QlThDnYC0tJp8PL9kdxufKXTfIy_0&callback=initMap"></script>
+  <?php endif; ?>
 </body>
 </html>

@@ -76,21 +76,53 @@ jQuery(document).ready(function($) {
     content.hide();
     $(item + '.active').find(content).slideDown(500);
 
-    elTitle.click(function() {
-      if ($(this).parent().hasClass('active')) {
-        $(this).parent().removeClass('active');
-        $(this).next().slideUp(500);
+    el.on('click', elTitle, function() {
+      if ($(this).find(elTitle).parent().hasClass('active')) {
+        $(this).find(elTitle).parent().removeClass('active');
+        $(this).find(elTitle).next().slideUp(500);
       }
       else {
-        $(this).parent().addClass('active');
-        content.not($(this).next()).slideUp(500);
-        elTitle.not($(this)).parent().removeClass('active');
-        $(this).next().slideDown(500);
+        $(this).find(elTitle).parent().addClass('active');
+        content.not($(this).find(elTitle).next()).slideUp(500);
+        elTitle.not($(this).find(elTitle)).parent().removeClass('active');
+        $(this).find(elTitle).next().slideDown(500);
       }
     });
   };
 
+  $('body').on('click', '.load-more', function(e) {
+    e.preventDefault();
+    $(this).text('Загружаю...');
+
+    var data = {
+      'action': 'load_more_faq',
+      'query': true_posts,
+      'page' : current_page
+    };
+    $.ajax({
+      url: window.wp_data.ajax_url, // обработчик
+      data: data, // данные
+      type: 'POST', // тип запроса
+      success: function(data){
+        if ( data ) {
+          $('.load-more').text('Показать еще'); // вставляем новые посты
+          $('#response').append(data);
+          accordion('.faq-card', '.faq-card__title', '.faq-card__content');
+          current_page++; // увеличиваем номер страницы на единицу
+          if (current_page == max_pages) $('.load-more').parent().remove(); // если последняя страница, удаляем кнопку
+        } else {
+          $('.load-more').parent().remove(); // если мы дошли до последней страницы постов, скроем кнопку
+        }
+      }
+    });
+  });
+
+  $('.location__head').click(function() {
+    $(this).next().slideToggle();
+  });
+
   accordion('.faq-card', '.faq-card__title', '.faq-card__content');
+  accordion('.docs-list__item', '.docs-list__title', '.docs-list__content');
 
   // SVG
   svg4everybody({});

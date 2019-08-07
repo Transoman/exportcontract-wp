@@ -8,28 +8,13 @@
  */
 
 ?>
+<div class="services-card">
+  <h3 class="services-card__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-  <header class="entry-header">
-    <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+  <?php the_excerpt(); ?>
 
-    <?php if ( 'post' === get_post_type() ) : ?>
-    <div class="entry-meta">
-      <?php
-      ith_posted_on();
-      ith_posted_by();
-      ?>
-    </div><!-- .entry-meta -->
-    <?php endif; ?>
-  </header><!-- .entry-header -->
+  <div class="services-card__cats">
+    <?php echo get_the_term_list( get_the_ID(), 'category_services', '', ', ', ''); ?>
+  </div>
 
-  <?php ith_post_thumbnail(); ?>
-
-  <div class="entry-summary">
-    <?php the_excerpt(); ?>
-  </div><!-- .entry-summary -->
-
-  <footer class="entry-footer">
-    <?php ith_entry_footer(); ?>
-  </footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+</div>

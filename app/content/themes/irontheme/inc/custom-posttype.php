@@ -12,7 +12,7 @@ function services_post_type() {
   $args = array(
     'label'                 => __( 'Услуга', 'ith' ),
     'labels'                => $labels,
-    'supports'              => array( 'title', 'editor', 'excerpt' ),
+    'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
     'taxonomies'            => array( 'category_services' ),
     'hierarchical'          => false,
     'public'                => true,

@@ -35,8 +35,19 @@
     mix-blend-mode: overlay
     opacity: 0.5
     pointer-events: none
+  .container
+    position: relative
   &__content
+    padding-top: 120px
     color: #fff
+    +r(767)
+      padding-top: 100px
   &__title
     color: #fff
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.2)
+  .breadcrumbs
+    position: absolute
+    top: 0
+    left: 15px
+    right: 15px
+    margin: 0

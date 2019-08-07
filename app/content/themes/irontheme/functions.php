@@ -55,3 +55,8 @@ require get_template_directory() . '/inc/custom-taxonomy.php';
  * Social icons
  */
 require get_template_directory() . '/inc/icons/icon-functions.php';
+
+/**
+ * Ajax functions
+ */
+require get_template_directory() . '/inc/ajax.php';

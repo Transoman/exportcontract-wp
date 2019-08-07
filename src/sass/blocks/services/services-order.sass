@@ -1,0 +1,79 @@
+.services-order
+  margin-top: 70px
+  +r(767)
+    margin-top: 40px
+  &__title
+    margin-bottom: 40px
+    +r(767)
+      margin-bottom: 30px
+  &__btn
+    +r(767)
+      text-align: center
+
+.services-order-list
+  margin: 0 -15px
+  padding: 0
+  list-style: none
+  display: flex
+  flex-wrap: wrap
+  counter-reset: step
+  +r(767)
+    display: block
+  &__item
+    position: relative
+    z-index: 1
+    width: 33.33%
+    padding: 80px 15px 0
+    margin-bottom: 45px
+    +r(767)
+      width: 100%
+      padding: 0 15px 35px 85px
+      margin: 0
+    p
+      &:last-child
+        margin: 0
+    &::before
+      content: counter(step)
+      counter-increment: step
+      position: absolute
+      top: 0
+      left: 15px
+      z-index: 2
+      width: 50px
+      height: 50px
+      background-color: #EAF3F7
+      border-radius: 3px
+      font-size: 20px
+      font-weight: 700
+      text-align: center
+      line-height: 50px
+      color: $accent
+    &::after
+      content: ''
+      position: absolute
+      top: 25px
+      left: 50px
+      z-index: -1
+      width: 100%
+      height: 5px
+      background: url(images/general/line.svg) repeat-x center
+      +r(767)
+        left: 37px
+        top: 35px
+        width: 5px
+        height: 100%
+        background: url(images/general/line-down.svg) repeat-y center
+    &:nth-child(3n)
+      &::after
+        +rmin(992)
+          display: none
+    &:last-child
+      &::after
+        display: none
+  &__title
+    display: block
+    margin-bottom: 10px
+    font-size: 16px
+    font-weight: 600
+    +r(767)
+      font-size: 14px

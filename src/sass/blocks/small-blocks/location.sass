@@ -1,4 +1,5 @@
 .location
+  position: relative
   &__icon
     width: 14px
     height: 18px
@@ -29,3 +30,38 @@
       border-left-width: 3px
       border-right-width: 3px
       border-top: 3px solid #6E787D
+  &__body
+    display: none
+    position: absolute
+    top: calc(100% + 5px)
+    right: 0
+    z-index: 11
+    width: 290px
+    padding: 20px 15px
+    background-color: #fff
+    box-shadow: 0 0 10px rgba(#000, 0.1)
+    border-radius: 3px
+    +r(992)
+      right: auto
+      left: 0
+    &::before
+      content: ''
+      position: absolute
+      top: -5px
+      right: 20px
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 0 5px 5px 5px
+      border-color: transparent transparent #ffffff transparent
+      +r(992)
+        right: auto
+        left: 20px
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    li
+      margin-bottom: 10px
+      &:last-child
+        margin-bottom: 0
